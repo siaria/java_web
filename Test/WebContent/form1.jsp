@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>회원가입</title>
+<title>회원가입창</title>
 <style>
 form {
 	border: 2px solid #ddd;
