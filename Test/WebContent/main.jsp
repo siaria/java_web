@@ -1,8 +1,9 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+	
+
 <html>
   <head>
     <title>webshop</title>
-    <meta charset="utf-8" />
 
 <style> 
 body {
@@ -60,6 +61,11 @@ text-decoration:underline;
 }
 
 </style>
+
+<% 
+String user_id = (String) session.getAttribute("id");
+%>
+
   </head>
   <body>
   <header>
@@ -68,17 +74,18 @@ text-decoration:underline;
         <li><a href="#">Home</a></li>
         <li><a href="#">Shop</a></li>
         <li><a href="#">Cart</a></li>
-        <li><a href="./login.html">Login</a></li>
+		<li><a href="./login.jsp">Login</a></li>
+		<li><% out.println(user_id+ "님 로그인중"); %></li>	
       </ul>
 
       <ul style= " float: left;">
         <li><a href="#">아트협업</a></li>
-        <li><a href="#">5월선문</a></li>
+        <li><a href="#">5월 선물</a></li>
+        <li><a href="#">추천</a></li>
         <li><a href="#">추천</a></li>
         <li><a href="#">랭크</a></li>
         <li><a href="#">남성</a></li>
         <li><a href="#">여성</a></li>
-        <li><a href="#">브랜드</a></li>
       </ul>
     </div>
     <h1> 쇼핑몰 </h1>
@@ -94,11 +101,11 @@ text-decoration:underline;
     
     
     <footer>
-    <h1>인기상품</h1>
+    <h1>상품 목록</h1>
     <div class="products" >
       <a href="#">
         <img src="">
-        <p>상의 </p>
+        <p>상의</p>
         <p class="price">49,000</p>
       </a>
 
@@ -110,13 +117,13 @@ text-decoration:underline;
 
       <a href="#">
         <img src="">
-        <p>신발</p>
+        <p>신발</p>
         <p class="price">69,000</p>
       </a>
 
       <a href="#">
         <img src="">
-        <p>운동화</p>
+        <p>운동화</p>
         <p class="price">79,000</p>
       </a>
 
@@ -128,21 +135,16 @@ text-decoration:underline;
 
       <a href="#">
         <img src="">
-        <p>상의</p>
+        <p>모자</p>
         <p class="price">99,000</p>
       </a>
 
       <a href="#">
         <img src="">
-        <p>모자</p>
+        <p>하의</p>
         <p class="price">39,000</p>
       </a>
 
-      <a href="#">
-        <img src="">
-        <p>하의</p>
-        <p class="price">99,000</p>
-      </a>
     </div>
     </footer>
   </body>

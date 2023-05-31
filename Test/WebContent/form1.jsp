@@ -67,11 +67,37 @@ select {
 	width: 490px;
 }
 </style>
+<script>
+function check(){ 
+	var form = document.membership;
+	
+	if(form.id.value.length < 4 || form.id.value.length > 12) {
+		alert("아이디는 4 - 12자 이내로 입력합니다!");
+		form.id.select();
+		return false;
+	}
+	
+	if(form.password.value.length < 4) {
+		alert("비밀번호는 는 4자 이상으로 입력합니다!");
+		form.password.select();
+		return false;
+	}
+	
+	if (isNaN(form.password.value)) {
+		alert("비밀번호는 숫자만 입력 가능합니다!");
+		form.password.select();
+		return false;
+	}
+}
+
+
+</script>
+
 </head>
 <body>
 	<div class="container">
 		<h2>회원가입</h2>
-		<form action="register.jsp" method="post">
+		<form action="register.jsp" method="post" name="membership">
 			<div class="form-group">
 				<label for="id">ID:</label> <input type="text" id="id" name="id"
 					required>
@@ -133,7 +159,7 @@ select {
 				<input type="checkbox" id="agree2" name="agree2" required> <label
 					for="agree2">약관에 동의합니다.</label> </p>
 			</div>
-			<button type="submit" class="btn-submit">가입하기</button>
+			<button type="submit" class="btn-submit" onclick="Check()">가입하기</button>
 		</form>
 	</div>
 </body>
