@@ -54,16 +54,16 @@ button {
 	function login_check() {
 
 		var id = document.login.id;
-		var password = document.login.password;
+		var passwd = document.login.passwd;
 
 		if (!id.value) {
 			alert("아이디를 입력하세요")
 			id.focus();
 			return false;
 		}
-		if (!password.value) {
+		if (!passwd.value) {
 			alert("비밀번호를 입력하세요")
-			password.focus();
+			passwd.focus();
 			return false;
 		}
 		document.location.href = "login_check.jsp";
@@ -79,10 +79,11 @@ button {
 <body>
 	<form method="post" name="login" action="./login_check.jsp" >
 		<h2>로그인</h2>
-		<label class="id"><b>아이디: </b></label> <input type="text"
-			placeholder="Enter id" name="id"> <label
-			class="password"><b>패스워드 :</b></label> <input type="password"
-			placeholder="Enter Password" name="password">
+		<label class="id"><b>아이디: </b></label> 
+		<input type="text" placeholder="Enter id" name="id"> 
+		
+			<label class="passwd"><b>패스워드:</b></label> 
+			<input type="password" placeholder="Enter Password" name="passwd">
 
 		<button type="submit" onclick="login_check();">로그인</button>
 		<button type="button" class="registration" onclick="formtest();">회원가입</button>

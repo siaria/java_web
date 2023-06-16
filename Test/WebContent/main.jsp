@@ -17,6 +17,7 @@ h1{
  margin-bottom: 60px;
  font-size: 24px;
  font-style: bold;
+ 
 }
 li{
   list-style-type: none;
@@ -66,16 +67,33 @@ text-decoration:underline;
 String user_id = (String) session.getAttribute("id");
 %>
 
+<script type="text/javascript">
+function logout(){
+	var logout=confirm("로그아웃 하시겠습니까?");
+	if(logout==true){
+		location.href="logout.jsp"; 
+	}
+	}
+</script>
+
+
   </head>
   <body>
   <header>
     <div class="navbar">
       <ul style= " float: right;">
-        <li><a href="#">Home</a></li>
+        <li><a href="./main.jsp">Home</a></li>
         <li><a href="#">Shop</a></li>
-        <li><a href="#">Cart</a></li>
+        <li><a href="./cart.jsp">Cart</a></li>
+        	<%if(user_id==null){
+        	%>
 		<li><a href="./login.jsp">Login</a></li>
+			<%	}
+        	else{
+				%>	
+		<li><a onclick = "logout()">Logout</a></li>
 		<li><% out.println(user_id+ "님 로그인중"); %></li>	
+		<%} %>
       </ul>
 
       <ul style= " float: left;">
@@ -100,8 +118,8 @@ String user_id = (String) session.getAttribute("id");
     </nav>
     
     
-    <footer>
-    <h1>상품 목록</h1>
+    <div>
+    <h1> 상품 목록 </h1>
     <div class="products" >
       <a href="#">
         <img src="">
@@ -117,13 +135,13 @@ String user_id = (String) session.getAttribute("id");
 
       <a href="#">
         <img src="">
-        <p>신발</p>
+        <p>신발</p>
         <p class="price">69,000</p>
       </a>
 
       <a href="#">
         <img src="">
-        <p>운동화</p>
+        <p>운동화</p>
         <p class="price">79,000</p>
       </a>
 
@@ -141,11 +159,12 @@ String user_id = (String) session.getAttribute("id");
 
       <a href="#">
         <img src="">
-        <p>하의</p>
+        <p>하의</p>
         <p class="price">39,000</p>
       </a>
-
+      
+     
     </div>
-    </footer>
+    </div>
   </body>
 </html>
