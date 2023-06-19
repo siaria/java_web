@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="dbconn.jsp" %>
 <%@ page import="dto.Product"%>
@@ -18,7 +17,7 @@
         int productPrice = rs.getInt("product_price");
         String name = rs.getString("name");
         String brand = rs.getString("brand");
-		String filename = rs.getString("file_name");
+        String filename = rs.getString("file_name");
         product = new Product(productId, productPrice, name, brand, filename);
     }
 
@@ -35,22 +34,22 @@
         
     </style>
     <script type="text/javascript">
-	function Buy(){
-		if(confirm("이 상품을 구매 하시겠습니까?")){
-			document.addForm.submit();
-		} else{
-			document.addForm.reset();
-		}
-	}
-	function addToCart(){
-		if(confirm("이 상품을 장바구니에 추가하시겠습니까?")){
-			document.addForm.submit();
-		} else{
-			document.addForm.reset();
-		}
-		
-	}
-</script>
+        function Buy() {
+            if (confirm("이 상품을 구매 하시겠습니까?")) {
+                document.addForm.submit();
+            } else {
+                document.addForm.reset();
+            }
+        }
+
+        function addToCart() {
+            if (confirm("이 상품을 장바구니에 추가합니다?")) {
+                document.addForm.submit();
+            } else {
+                return false;
+            }
+        }
+    </script>
 </head>
 <body>
     <h1>상품 상세 정보</h1>
@@ -61,20 +60,18 @@
             <th>상품 가격</th>
             <th>상품 이름</th>
             <th>브랜드</th>
-            <th>구매/장바구니</th> 
+            <th>구매/장바구니</th>
         </tr>
         <tr>
-        	<img src= "<%= product.getFilename() %>" alt="image" class= "_file">
             <td><%= product.getProductId() %></td>
             <td><%= product.getProductPrice() %></td>
             <td><%= product.getName() %></td>
             <td><%= product.getBrand() %></td>
             <td>
-                <form action="addcart.jsp" method="post">
+                <form action="addcart.jsp" method="post" name="addForm" onsubmit="return addToCart()">
                     <input type="hidden" name="productId" value="<%= product.getProductId() %>">
                     <input type="button" value="구매" onclick="Buy()">
-                    <input type="submit" value="장바구니에 추가" onclick="addToCart()">
-                    
+                    <input type="button" value="장바구니에 추가" onclick="addToCart()">                    
                 </form>
             </td>
         </tr>

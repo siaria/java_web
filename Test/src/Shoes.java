@@ -1,6 +1,6 @@
 
 
-public class Shoes extends Cloth {
+public class Shoes extends Cloth { 		//Cloth Ŭ���� �� Shoes Ŭ����
 	int size;
 	
 	public Shoes(String pname,int price,int size) {

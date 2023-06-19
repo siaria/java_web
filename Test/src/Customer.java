@@ -1,10 +1,8 @@
 
-
-public class Customer {
+public class Customer { 	//�� Ŭ����
 	String name;
 	String address;
 	String phone;
-	
 	
 	public Customer(String name,String address,String phone) {
 		super();

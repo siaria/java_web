@@ -7,6 +7,16 @@
 <% 
 String user_id = (String) session.getAttribute("id");
 %>
+<script type="text/javascript">
+
+function logout(){
+	var logout=confirm("로그아웃 하시겠습니까?");
+	if(logout==true){
+		location.href="logout.jsp"; 
+	}
+	}
+
+</script>
 
     <div class="navbar">
       <ul style= " float: right;">
