@@ -1,0 +1,34 @@
+ <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+  <link rel="stylesheet" href="_navbar.css">
+  <header>
+<% 
+String user_id = (String) session.getAttribute("id");
+%>
+    <div class="navbar">
+      <ul style= " float: right;">
+        <li><a href="./main.jsp" class="nav_main">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="./cart.jsp">Cart</a></li>
+        	<%if(user_id==null){
+        	%>
+		<li><a href="./login.jsp">Login</a></li>
+			<%	}
+        	else{
+				%>	
+		<li><a onclick = "logout()">Logout</a></li>
+		<li><% out.println(user_id+ "님 로그인중"); %></li>	
+		<%} %>
+      </ul>
+
+      <ul style= " float: left;">
+        <li ><a href="./event_diablo.jsp"><img src="d4-logo.png"></a></li>
+        <li><a href="#" class="tab">5월 선물</a></li>
+        <li><a href="#" class="tab">추천</a></li>
+        <li><a href="#" class="tab">추천</a></li>
+        <li><a href="#" class="tab">랭크</a></li>
+        <li><a href="#" class="tab">남성</a></li>
+        <li><a href="#" class="tab">여성</a></li>
+      </ul>
+    </div>
+    <h1> 쇼핑몰 </h1>
+    </header>

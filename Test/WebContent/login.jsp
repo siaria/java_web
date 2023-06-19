@@ -20,6 +20,7 @@ input[type=text], input[type=password] {
 	margin-bottom: 20px;
 	border: 1px solid #ddd;
 	width: 270px;
+	border-radius: 6px;
 }
 
 button {
@@ -29,6 +30,7 @@ button {
 	border: none;
 	width: 100%;
 	margin-bottom: 10px;
+	border-radius: 8px;
 }
 
 .membership {
@@ -75,8 +77,9 @@ button {
 </script>
 
 </head>
-
+<%@ include file="_navbar.jsp" %>
 <body>
+
 	<form method="post" name="login" action="./login_check.jsp" >
 		<h2>로그인</h2>
 		<label class="id"><b>아이디: </b></label> 

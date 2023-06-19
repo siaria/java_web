@@ -15,7 +15,7 @@ System.out.println("로그아웃 성공");
 
 <script type="text/javascript">
 
-confirm("로그아웃되었습니다!");
+alert("로그아웃되었습니다!");
 location.href = "main.jsp"
 
 </script>
