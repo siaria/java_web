@@ -29,42 +29,53 @@
 <!DOCTYPE html>
 <html>
 <head>
+
     <title>상품 페이지</title>
-    <style>
-        table {
-            width: 100%;
-        }
+<style>
+._product {
+	width: 90%;
+	margin-left: 15%;
+	margin-right: 15%;
+	margin-top: 50px;
+}
 
-        th, td {
-            padding: 8px;
-            text-align: center;
-        }
+.product {
+	display: block;
+	width: 25%;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	float: left;
+	margin-top: 80px; margin-left : 30px; margin-right : 30px;
+	margin-bottom: 80px;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+a{
+	text-align: center;
+}
 
-        th {
-            background-color: #f2f2f2;
-        }
-    </style>
+</style>
+
+<%@ include file="_navbar.jsp" %>
 </head>
 <body>
-<%@ include file="_navbar.jsp" %>
 
-    <table>
-        <tr>
-            <th>상품 아이디</th>
-            <th>상품 가격</th>
-            <th>상품 이름</th>
-            <th>브랜드</th>
-            <th>상세 정보</th>
-        </tr>
+
+
+<div class= "_product">
         <% for (Product product : products) { %>
-        <tr>
-            <td><%= product.getProductId() %></td>
-            <td><%= product.getProductPrice() %></td>
-            <td><%= product.getName() %></td>
-            <td><%= product.getBrand() %></td>
-            <td><a href="productDetails.jsp?productId=<%= product.getProductId() %>">상세 보기</a></td>
-        </tr>
+        <div class=  "product">
+        <a href="productDetails.jsp?productId=<%= product.getProductId() %>">
+        <div class= "ptext">
+            <div class= "id"><%= product.getProductId() %></div>
+            <div class= "price"><%= product.getProductPrice() %></div>
+            <div class= "name"><%= product.getName() %></div>
+            <div class= "brand"><%= product.getBrand() %></div>
+        </div>
+           </a>
+           </div>
         <% } %>
-    </table>
+</div>
 </body>
 </html>
