@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 
-style>body {
+body {
 	margin: 0;
 	min-width: 992px;
 	font-family: "Segoe UI,Noto Sans,sans-serif,Helvetica Neue,Noto Sans KR";
@@ -10,7 +10,7 @@ style>body {
 .header {
 	padding-top: 40px;
 	padding-bottom: 20px;
-margin-top: -20px;
+	margin-top: -20px;
 }
 
 li {

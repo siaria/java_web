@@ -16,8 +16,9 @@
         int productPrice = rs.getInt("product_price");
         String name = rs.getString("name");
         String brand = rs.getString("brand");
+        String filename = rs.getString("file_Name");
 
-        Product product = new Product(productId, productPrice, name, brand);
+        Product product = new Product(productId, productPrice, name, brand, filename);
         products.add(product); 
     }
 
@@ -51,10 +52,13 @@
 	margin-right: 30px;
 	margin-left: 30px;
 }
-a{
+.product>a{
 	text-align: center;
 }
 
+._file{
+	width:25%;
+}
 </style>
 
 <%@ include file="_navbar.jsp" %>
@@ -67,6 +71,7 @@ a{
         <% for (Product product : products) { %>
         <div class=  "product">
         <a href="productDetails.jsp?productId=<%= product.getProductId() %>">
+        <img src= "<%= product.getFilename() %>" alt="image" class= "_file">
         <div class= "ptext">
             <div class= "id"><%= product.getProductId() %></div>
             <div class= "price"><%= product.getProductPrice() %></div>

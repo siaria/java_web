@@ -7,12 +7,14 @@ public class Product {
     private int productPrice;
     private String name;
     private String brand;
+	private String filename;
 
-    public Product(int productId, int productPrice, String name, String brand) {
+    public Product(int productId, int productPrice, String name, String brand, String filename) {
         this.productId = productId;
         this.productPrice = productPrice;
         this.name = name;
         this.brand = brand;
+        this.filename = filename;
     }
 
     public void setProductId(int productId) {
@@ -46,4 +48,11 @@ public class Product {
     public String getBrand() {
         return brand;
     }
+    public String getFilename() {
+		return filename;
+	}
+
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 }

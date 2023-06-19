@@ -18,8 +18,8 @@
         int productPrice = rs.getInt("product_price");
         String name = rs.getString("name");
         String brand = rs.getString("brand");
-
-        product = new Product(productId, productPrice, name, brand);
+		String filename = rs.getString("file_name");
+        product = new Product(productId, productPrice, name, brand, filename);
     }
 
     rs.close();
@@ -64,6 +64,7 @@
             <th>구매/장바구니</th> 
         </tr>
         <tr>
+        	<img src= "<%= product.getFilename() %>" alt="image" class= "_file">
             <td><%= product.getProductId() %></td>
             <td><%= product.getProductPrice() %></td>
             <td><%= product.getName() %></td>
