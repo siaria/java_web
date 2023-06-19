@@ -1,24 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <%@ page import="java.sql.*" %>
 <%@ include file="dbconn.jsp" %>
-<%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
 
 <%
-    String sql = "SELECT * FROM product ORDER BY product_id ASC";
+    // 전달받은 상품 ID 파라미터 확인
+    int productId = Integer.parseInt(request.getParameter("productId"));
+
+    // 상품 정보를 가져오기 위한 SQL 쿼리
+    String sql = "SELECT * FROM product WHERE product_id = ?";
     PreparedStatement pstmt = conn.prepareStatement(sql);
+    pstmt.setInt(1, productId);
     ResultSet rs = pstmt.executeQuery();
 
-    ArrayList<Product> products = new ArrayList<>();
+    Product product = null;
 
-    while (rs.next()) {
-        int productId = rs.getInt("product_id");
+    if (rs.next()) {
+        // 상품 정보 가져오기
         int productPrice = rs.getInt("product_price");
         String name = rs.getString("name");
         String brand = rs.getString("brand");
 
-        Product product = new Product(productId, productPrice, name, brand);
-        products.add(product); 
+        product = new Product(productId, productPrice, name, brand);
     }
 
     rs.close();
@@ -29,7 +32,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>상품 페이지</title>
+    <title>상품 상세 정보</title>
     <style>
         table {
             width: 100%;
@@ -46,24 +49,24 @@
     </style>
 </head>
 <body>
-    <h1>상품</h1>
+    <h1>상품 상세 정보</h1>
+    <% if (product != null) { %>
     <table>
         <tr>
             <th>상품 아이디</th>
             <th>상품 가격</th>
             <th>상품 이름</th>
             <th>브랜드</th>
-            <th>상세 정보</th>
         </tr>
-        <% for (Product product : products) { %>
         <tr>
             <td><%= product.getProductId() %></td>
             <td><%= product.getProductPrice() %></td>
             <td><%= product.getName() %></td>
             <td><%= product.getBrand() %></td>
-            <td><a href="productDetails.jsp?productId=<%= product.getProductId() %>">상세 보기</a></td>
         </tr>
-        <% } %>
     </table>
+    <% } else { %>
+    <p>상품을 찾을 수 없습니다.</p>
+    <% } %>
 </body>
 </html>

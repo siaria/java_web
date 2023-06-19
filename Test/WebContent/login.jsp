@@ -8,47 +8,58 @@
 <title>Login Page</title>
 <style>
 form {
-	border: 2px solid #ddd;
 	padding: 20px;
 	width: 300px;
 	margin: 0 auto;
 	margin-top: 50px;
 }
 
-input[type=text], input[type=password] {
-	padding: 10px;
-	margin-bottom: 20px;
-	border: 1px solid #ddd;
-	width: 270px;
-	border-radius: 6px;
+._inputbox {
+    position: relative;
+    padding: 10px 0 14px;
+    	
 }
+input{
+padding: 0;
+    outline: 0;
+    border: 0;
+    resize: none;
+    border-radius: 0;
+    -webkit-appearance: none;
+    background-color: transparent
+    }
+input[type=text] , input[type=password]{
+    padding: 8px 0;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -.15px;
+    line-height: 22px;
+    border-bottom: 1px solid #ebebeb;
+}
+label{
+font-size: 13px;
+    letter-spacing: -.07px;
+    line-height: 18px;}
 
-button {
-	background-color: #4CAF50;
-	color: white;
+button[type=button], button[type=submit] {
+
+    background-color: #ebebeb;
+    color: #fff;
+    cursor: default;
 	padding: 10px;
 	border: none;
 	width: 100%;
-	margin-bottom: 10px;
-	border-radius: 8px;
+    font-size: 16px;
+    letter-spacing: -.16px;
+    font-weight: 700;
+    height: 52px;
+    border-radius: 12px;
 }
-
-.membership {
-	display: block;
-	text-align: center;
-	margin-top: 20px;
-	color: #4CAF50;
-	text-decoration: none;
-	font-weight: bold;
-	font-size: 14px;
+.bt{
+	    margin-top: 40px;
 }
-
-.registration {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px;
-	border: none;
-	width: 100%;
+.login{
+	margin-bottom: 4px;
 }
 </style>
 
@@ -82,14 +93,18 @@ button {
 
 	<form method="post" name="login" action="./login_check.jsp" >
 		<h2>로그인</h2>
+		<div class ="_inputbox">
 		<label class="id"><b>아이디: </b></label> 
 		<input type="text" placeholder="Enter id" name="id"> 
-		
+		</div>
+		<div class= "_inputbox">
 			<label class="passwd"><b>패스워드:</b></label> 
 			<input type="password" placeholder="Enter Password" name="passwd">
-
-		<button type="submit" onclick="login_check();">로그인</button>
+		</div>
+		<div class= "_bt">
+		<button type="submit" class="login"onclick="login_check();">로그인</button>
 		<button type="button" class="registration" onclick="formtest();">회원가입</button>
+		</div>
 	</form>
 </body>
 </html>

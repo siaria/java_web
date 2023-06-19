@@ -1,18 +1,16 @@
 @charset "UTF-8";
 
-<style>
-body {
+
+style>body {
 	margin: 0;
 	min-width: 992px;
 	font-family: "Segoe UI,Noto Sans,sans-serif,Helvetica Neue,Noto Sans KR";
 }
 
-h1 {
-	text-align: center;
-	margin-top: 50px;
-	margin-bottom: 60px;
-	font-size: 24px;
-	font-style: bold;
+.header {
+	padding-top: 40px;
+	padding-bottom: 20px;
+margin-top: -20px;
 }
 
 li {
@@ -28,42 +26,24 @@ a {
 	font-size: 16px;
 }
 
-img {
+.dia {
 	width: 90px;
 	height: 40px;
 	display: block;
 	position: relative;
+	margin-top: -10px;
+}
+
+.mainlogo {
+	width: 650px;
+	height: 112px;
+	display: block;
 }
 
 p {
 	margin-left: 30px;
 }
 
-nav {
-	height: 300px;
-	width: 400px;
-}
-
-nav>a {
-	margin-left: 5px;
-	display: inline-block;
-}
-
-nav>div>a>img {
-	height: 300px;
-	width: 1400px;
-	margin-left: 30px;
-	display: inline-block;
-}
-
-footer {
-	height: 300px;
-}
-
-footer>h1 {
-	margin-left: 200px;
-	text-decoration: underline;
-}
 
 .tab {
 	position: relative;
@@ -75,4 +55,19 @@ footer>h1 {
 .nav_main {
 	font-weight: 700;
 }
+
+.logo {
+	
+	padding-left: 37%;
+	padding-right: 30%;
+	display: block;
+}
+@media screen and (max-width: 1526px){
+	
+.logo{display:none;}
+
+}
+
+
+
 </style>

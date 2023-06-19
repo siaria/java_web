@@ -1,13 +1,17 @@
  <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
+ 
   <link rel="stylesheet" href="_navbar.css">
-  <header>
+  
+  <div class="header">
+  
 <% 
 String user_id = (String) session.getAttribute("id");
 %>
+
     <div class="navbar">
       <ul style= " float: right;">
         <li><a href="./main.jsp" class="nav_main">Home</a></li>
-        <li><a href="#">Shop</a></li>
+        <li><a href="./products.jsp">Shop</a></li>
         <li><a href="./cart.jsp">Cart</a></li>
         	<%if(user_id==null){
         	%>
@@ -21,14 +25,15 @@ String user_id = (String) session.getAttribute("id");
       </ul>
 
       <ul style= " float: left;">
-        <li ><a href="./event_diablo.jsp"><img src="d4-logo.png"></a></li>
+        <li ><a href="./event_diablo.jsp"><img src="d4-logo.png" class="dia"></a></li>
         <li><a href="#" class="tab">5월 선물</a></li>
         <li><a href="#" class="tab">추천</a></li>
         <li><a href="#" class="tab">추천</a></li>
         <li><a href="#" class="tab">랭크</a></li>
-        <li><a href="#" class="tab">남성</a></li>
-        <li><a href="#" class="tab">여성</a></li>
       </ul>
+    
+    <div class="logo" >
+    <img src = "_logo6_1.png" alt="쇼핑몰" class="mainlogo">
     </div>
-    <h1> 쇼핑몰 </h1>
-    </header>
+    </div>
+    </div>

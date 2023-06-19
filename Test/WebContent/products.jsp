@@ -46,7 +46,8 @@
     </style>
 </head>
 <body>
-    <h1>상품</h1>
+<%@ include file="_navbar.jsp" %>
+
     <table>
         <tr>
             <th>상품 아이디</th>
