@@ -20,7 +20,6 @@
     if (names.size() > 0) {
         String randomWinner = names.get((int) (Math.random() * names.size()));
         String result = "축하합니다! " + randomWinner + "님 당첨되셨습니다!";
-        //out.println("alert('" + result + "');");
     }
        
     if (rs != null)
@@ -48,6 +47,24 @@
             width: 1000px;
             height: 550px;
         }
+        .text{
+        	font-size: 20px;
+        	margin-top: 30px;
+        }
+        button{
+
+    background-color: #222 ;
+    color: #fff;
+    cursor: default;
+	padding: 10px;
+	border: none;
+	width: 30%;
+    font-size: 16px;
+    letter-spacing: -.16px;
+    font-weight: 700;
+    height: 52px;
+    border-radius: 12px;
+}
     </style>
     <script>
         function runLottery() {
@@ -77,7 +94,7 @@
     </script>
 </head>
 <body>
-    <h1></h1>
+    <%@ include file="_navbar.jsp" %>
     <div style='background-color: black'>
         <img src="diablo4.jpg" alt="디아블로 4 이미지"><br>
         <img src="diablo_1.jpg" alt="디아블로 4 이미지"><br>
@@ -88,13 +105,14 @@
         <iframe width="560" height="315" src="https://www.youtube.com/embed/VB0JPu6NUyI" frameborder="0"
             allowfullscreen></iframe>
     </div>
-    <div>
+    <div class= "text">
         <p>디아블로 4 이벤트 입니다. 추첨하여 디아블로4 패키지를 받아가세요!</p>
         <p>이벤트 확률은 50% 입니다.</p>
         <p>추첨을 진행하여 당첨자를 확인하세요.</p>
+        <p id="result"></p>
         <button class="btn" onclick="runLottery()">추첨하기</button>
        	
-        <p id="result"></p>
+        
     </div>
 </body>
 </html>

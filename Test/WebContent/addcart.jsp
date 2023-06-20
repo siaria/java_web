@@ -5,6 +5,8 @@
 <%@ page import="java.util.ArrayList" %>
 <%@ page import="dto.Product"%>
 
+
+
 <%
     int productId = Integer.parseInt(request.getParameter("productId"));
 
@@ -34,8 +36,9 @@
         }
         cartItems.add(product);
         session.setAttribute("cartItems", cartItems);
-        response.sendRedirect("cart.jsp");
-    } else {
-        response.sendRedirect("cart.jsp");
+        response.sendRedirect("products.jsp");
+    } 
+    else {
+        response.sendRedirect("products.jsp");
     }
 %>

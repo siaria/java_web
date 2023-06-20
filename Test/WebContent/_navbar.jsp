@@ -1,6 +1,6 @@
  <%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
  
-  <link rel="stylesheet" href="_navbar.css">
+<link rel="stylesheet" href="_navbar.css">
 <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/font-applesdgothicneo@1.0/all.min.css">
   <div class="header">
   
@@ -39,10 +39,6 @@ function logout(){
 <div class="navbar">
       <ul style= " float: left;" id= _event>
         <li class= ev><a href="./event_diablo.jsp"><img src="d4-logo.png" class="dia"></a></li>
-        <li class= ev><a href="#" class="tab">5월 선물</a></li>
-        <li class= ev><a href="#" class="tab">추천</a></li>
-        <li class= ev><a href="#" class="tab">추천</a></li>
-        <li class= ev><a href="#" class="tab">랭크</a></li>
       </ul>
 </div>
     

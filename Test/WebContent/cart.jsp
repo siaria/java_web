@@ -8,12 +8,7 @@
 %>
 <html>
 <head>
-    <title>장바구니</title>
-    <style>
-       
-    </style>
- 
-    <script type="text/javascript">
+        <script type="text/javascript">
         function Buy() {
             if (confirm("이 상품을 구매 하시겠습니까?")) {
                 location.href = "cart.jsp";
@@ -27,33 +22,99 @@
                 location.href = "deleteCart.jsp";
             }
         }
-        
-        function addToCart(productId) {
-            if (confirm("이 상품을 장바구니에 추가하시겠습니까?")) {
-                location.href = "addcart.jsp?productId=" + productId;
-            }else{
-            	response.sendRedirect("productDetails.jsp");
-            }
-            	
-        }
     </script>
+    
+<style>
+ table{
+ 		margin: auto;
+	 	border-collapse: collapse;
+	 	width: 60%;
+	 	text-align: center;
+	 }
+	 th{
+	 font-size: 20px;
+	 }
+	 td{
+	 font-size: 18px;
+	 padding-top: 30px; 
+	 }
+
+h2 {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 60px;
+	font-size: 24px;
+	font-style: bold;
+}
+body {
+	overflow-x: hidden;
+	}
+	
+.button1{
+	background-color: #41b979;
+	color: #fff;
+	cursor: default;
+	padding: 15px;
+	border: none;
+	width: 15%;
+	font-size: 17px;
+	letter-spacing: -.16px;
+	font-weight: 700;
+	height: 55px;
+	border-radius: 12px;
+	margin: 20px 0;
+}
+.button2{
+	display:inline;
+	background-color: #ef6253;
+	color: #fff;
+	cursor: default;
+	padding: 15px;
+	border: none;
+	text-align:center;
+	font-size: 17px;
+	letter-spacing: -.16px;
+	font-weight: 700;
+	border-radius: 12px;
+
+}
+.bt{
+	width: 50%;
+	padding-top:20px;
+	padding-left: 25%;
+}
+
+._main{
+ 		margin: auto;
+	 	border-collapse: collapse;
+	 	width: 60%;
+	 	text-align: center;
+}
+.price{
+	margin-top: 50px;
+	font-size: 20px;
+	font-weight: 700;
+}
+</style>
+ 
+
 </head>
 <body>
-    <h1>장바구니</h1>
+
+<%@ include file="_navbar.jsp" %>
+
+    <h2>장바구니</h2>
     <% 
         List<Product> cartItems = (List<Product>) session.getAttribute("cartItems");
         if (cartItems != null && !cartItems.isEmpty()) { 
     %>
-    <tr>
-        <td align="left"><a href="deleteCart.jsp?cartId=<%= cartId %>" class="btn btn-danger">삭제하기</a></td>
-    </tr>
+
     <table>
         <tr>
             <th>상품 아이디</th>
             <th>상품 가격</th>
             <th>상품 이름</th>
             <th>브랜드</th>
-            <th></th>
         </tr>
         <% 
             int totalPrice = 0;
@@ -62,21 +123,28 @@
         %>
             <tr>
                 <td><%= product.getProductId() %></td>
-                <td><%= product.getProductPrice() %></td>
+                <td><%= product.getProductPrice() %> 원</td>
                 <td><%= product.getName() %></td>
                 <td><%= product.getBrand() %></td>
                 
             </tr>
         <% } %>
-        <tr>
-            <td colspan="4">총 가격:</td>
-            <td><%= totalPrice %></td>
-            <td><input type="button" value="구매" onclick="Buy()"></td>
-        </tr>
-    </table>
-        
-    <% } else { %>
-        <p>장바구니가 비어있습니다.</p>
+ </table>
+ 			<div class= "_main">
+            <div class= "price"> 합계:  <%= totalPrice %> 원</div>
+
+
+			<div class= "bt">
+            <div><input type="button" class = "button1" value="구매" onclick="Buy()">
+           <a href="deleteCart.jsp?cartId=<%= cartId %>" class = "button2">	삭제하기	</a></div>
+        	</div>
+        	
+        	<div>
+    <% 
+    } else 
+    { 
+    %>
+        <p style="text-align: center;">장바구니가 비어있습니다.</p>
     <% } %>
 </body>
 </html>

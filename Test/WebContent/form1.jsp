@@ -7,6 +7,53 @@
 <title>회원가입창</title>
 
 <style>
+form {
+	border: 2px solid #ddd;
+	padding: 35px;
+	width: 35%;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+input{
+	padding: 0;
+    outline: 0;
+    border: 0;
+    resize: none;
+    border-radius: 0;
+    background-color: transparent
+    }
+
+
+input[type=text], input[type=password] {
+    padding: 15px 0;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -.15px;
+    line-height: 22px;
+    border-bottom: 1px solid #ebebeb;
+    margin: 5px 0;
+}
+
+button[type=submit] {
+    background-color: #222 ;
+    color: #fff;
+    cursor: default;
+	padding: 15px;
+	border: none;
+	width: 100%;
+    font-size: 16px;
+    letter-spacing: -.16px;
+    font-weight: 700;
+    height: 55px;
+    border-radius: 12px;
+    margin: 20px 0;
+}
+label{
+	font-size: 14px;
+    letter-spacing: -.07px;
+    line-height: 18px;
+    }
+
 .membership {
 	display: block;
 	text-align: center;
@@ -34,81 +81,34 @@ h2 {
 }
 
 select {
-	padding: 10px;
-	margin-bottom: 20px;
 	border: 1px solid #ddd;
-width: 100%;
 	border-radius: 6px;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 15px;
+    letter-spacing: -.15px;
+    line-height: 25px;
+    border-bottom: 1px solid #ebebeb;
+    margin: 20px 0;
 }
 
-.form-group1, .form-group2 {
+.formgroup1 {
 	overflow: auto;
-	box-sizing: border-box;
-	max-height: 150px;
-	padding: 13px;
-	border-radius: 6px;
-	border: 1px solid #d6d6d6;
+    box-sizing: border-box;
+    max-height: 150px;
+    padding: 13px;
+    border-radius: 6px;
+    border: 1px solid #d6d6d6;
 }
 
-form {
-	padding: 20px;
-	width: 300px;
-	margin: 0 auto;
-	margin-top: 50px;
+.formgroup2 {
+	overflow: auto;
+    box-sizing: border-box;
+    max-height: 150px;
+    padding: 13px;
+    border-radius: 6px;
+    border: 1px solid #d6d6d6;
 }
-
-._inputbox {
-	position: relative;
-	padding: 10px 0 14px;
-}
-
-input {
-	padding: 0;
-	outline: 0;
-	border: 0;
-	resize: none;
-	border-radius: 0;
-	-webkit-appearance: none;
-	background-color: transparent
-}
-
-input[type=text], input[type=password] {
-	padding: 8px 0;
-	width: 100%;
-	font-size: 15px;
-	letter-spacing: -.15px;
-	line-height: 22px;
-	border-bottom: 1px solid #ebebeb;
-}
-
-label {
-	font-size: 13px;
-	letter-spacing: -.07px;
-	line-height: 18px;
-}
-
-button[type=submit] {
-	background-color: #222;
-	color: #fff;
-	cursor: default;
-	padding: 10px;
-	border: none;
-	width: 100%;
-	font-size: 16px;
-	letter-spacing: -.16px;
-	font-weight: 700;
-	height: 52px;
-	border-radius: 12px;
-}
-
-.bt {
-	margin-top: 40px;
-}
-
-.login {
-	margin-bottom: 4px;
-}
-</style>
 
 </style>
 
@@ -137,7 +137,7 @@ function check(){
 
 
 </script>
-
+ <%@ include file="_navbar.jsp" %>
 </head>
 <body>
 	<div class="container">
@@ -171,7 +171,7 @@ function check(){
 				</select>
 			</div>
 
-			<div class="form-group1">
+			<div class="formgroup1">
 				<p>
 					<label for="terms1">약관 동의:</label>
 					
@@ -476,7 +476,7 @@ function check(){
 	</div>
 
 
-	<div class="form-group2">
+	<div class="formgroup2">
 		<p>
 			<label for="terms2">개인정보 수집 및 이용 동의:</label>
 		<div>

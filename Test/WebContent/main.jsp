@@ -1,59 +1,56 @@
-<%@ page language="java" contentType="text/html; charset=utf-8" pageEncoding="utf-8" %>
-	
-
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8"%>
 <html>
-  <head>
-    <title>webshop</title>
-
+<head>
 <style>
-body {
-	margin: 0;
-	min-width: 992px;
-	font-family: "Segoe UI,Noto Sans,sans-serif,Helvetica Neue,Noto Sans KR";
+#abc {
+	margin-top: 40px;
+	margin-left: 5%;
+	height: 30%;
 }
 
-a {
-	text-decoration: none;
-	color: black;
-	float: left;
-	font-size: 16px;
-	margin-left: 5px;
-	display: inline-block;
+.mySlides {
+	display: none;
+	height: 550px;
 }
-
-img {
-	width: 90px;
-	height: 40px;
-	display: block;
-	position: relative;
-}
-
-a {
-
-}
-
-div>a>img {
-	height: 300px;
-	width: 100%;
-	margin-left: 30px;
-	display: inline-block;
-}
-
 </style>
 
 
-  </head>
-  <body>
- 
-    <%@ include file="_navbar.jsp" %>
-    
 
-    <div class="event">
-    <a href="#">
-    <img src="">
-    </a>
-    </div>
+</head>
+<body>
 
-    
-  </body>
+	<%@ include file="_navbar.jsp"%>
+</head>
+<body style="overflow-x: hidden;">
+	<div class="w3-content w3" style="max-width: 100%" id="abc">
+			<img class="mySlides" src="b1.jpg" style="width: 95%"> 
+			<img class="mySlides" src="b2.jpg" style="width: 95%"> 
+			<img class="mySlides" src="b3.jpg" style="width: 95%"> 
+			<img class="mySlides" src="b4.jpg" style="width: 95%"> 
+			<img class="mySlides" src="b5.jpg" style="width: 95%"> 
+			<img class="mySlides" src="b6.jpg" style="width: 95%">
+	</div>
+	<script>
+	var myIndex = 0;
+	carousel();
+
+	function carousel() {
+		var i;
+		var x = document.getElementsByClassName("mySlides");
+		for (i = 0; i < x.length; i++) {
+			x[i].style.display = "none";
+		}
+		myIndex++;
+		if (myIndex > x.length) {
+			myIndex = 1
+		}
+		x[myIndex - 1].style.display = "block";
+		setTimeout(carousel, 2500);
+	}
+</script>
+
+<%@ include file="qwe.jsp"%>
+
+</body>
 </html>

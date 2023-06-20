@@ -38,6 +38,7 @@
 	margin-left: 15%;
 	margin-right: 15%;
 	margin-top: 50px;
+	
 }
 
 .product {
@@ -47,7 +48,7 @@
 	text-decoration: none;
 	color: black;
 	float: left;
-	margin-top: 80px; margin-left : 30px; margin-right : 30px;
+	margin-top: 80px;
 	margin-bottom: 80px;
 	margin-right: 50px;
 	margin-left: 50px;
@@ -96,14 +97,26 @@
     font-weight: 700;
     letter-spacing: -.04px;
 }
+._admin{
+	display: block;
+	width: 100%;
+	text-align: center;
+	text-decoration: none;
+	color: black;
+	float: left;
+	margin-top: 80px;
+	margin-bottom: 40px;
+	margin-left: 20px;
+}
+body {
+	overflow-x: hidden;
+}
 </style>
 
 <%@ include file="_navbar.jsp" %>
 </head>
 <body>
-
-
-
+<div>
 <div class= "_product">
         <% for (Product product : products) { %>
         <div class=  "product">
@@ -115,12 +128,25 @@
         	<div class= "brand"><%= product.getBrand() %></div>
         	<div class= "name"><%= product.getName() %></div>
             <div class= "price"><%= product.getProductPrice() %> 원</div>
-            
-            
         </div>
            </a>
            </div>
         <% } %>
+</div>
+<div class= "_admin">
+	<%
+		String _id = (String) session.getAttribute("id");
+	%>
+
+	<%
+		if(_id != null && _id.equals("admin")) {
+	%> 
+		<li><a href="./deleteproduct.jsp" class="deleteP">Delete P</a></li>
+        <li><a href="./addProduct.jsp" class="insertP">Insert P</a></li>
+        <li><% out.println(_id + "님 로그인중");%> </li>
+
+<%}%>
+</div>
 </div>
 </body>
 </html>

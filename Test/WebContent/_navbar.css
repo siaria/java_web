@@ -10,8 +10,11 @@ body {
 	padding-top: 40px;
 	padding-bottom: 20px;
 	margin-top: -20px;
+	border: 1px solid #999;
 }
-
+._navbar{
+	width: 100%;
+}
 .navbar {
 	display: block;
 }
@@ -29,44 +32,22 @@ a {
 }
 
 .dia {
-	width: 90px;
-	height: 40px;
+	width: 100%;
+	height: 80px;
 	display: block;
 	position: relative;
 	margin-top: -10px;
-}
-
-#_event .ev::after {
-	position: absolute;
-	content: "";
-	display: block;
-	border-bottom: 3px solid #959595;
-	transition: width 500ms ease-out;
-	left: auto;
-	right: 0;
-	width: 0;
-	padding-bottom: 34px;
-}
-
-#_event .ev:hover::after {
-	padding-bottom: 34px;
-	width: 18%;
-	left: 0;
-	right: auto;
 }
 
 #_event li .tab {
 	color: #000;
 }
 
-.mainlogo {
-	width: 650px;
-	height: 112px;
-	display: block;
-}
+.mainlogo {display: block;}
 
 p {
 	margin-left: 30px;
+	margin-top: 30px;
 }
 
 .tab {
@@ -86,7 +67,7 @@ p {
 }
 
 .logo {
-	padding-left: 37%;
+	padding-left: 42%;
 	padding-right: 30%;
 	display: block;
 }
@@ -96,6 +77,3 @@ p {
 		display: none;
 	}
 }
-</
-style
->

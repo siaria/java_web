@@ -61,6 +61,14 @@ button[type=button], button[type=submit] {
 .login{
 	margin-bottom: 4px;
 }
+
+h2 {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 60px;
+	font-size: 24px;
+	font-style: bold;
+}
 </style>
 
 <script type="text/javascript">
@@ -89,7 +97,7 @@ button[type=button], button[type=submit] {
 
 </head>
 <%@ include file="_navbar.jsp" %>
-<body>
+<body style="overflow-x: hidden;">
 
 	<form method="post" name="login" action="./login_check.jsp" >
 		<h2>로그인</h2>
@@ -106,5 +114,6 @@ button[type=button], button[type=submit] {
 		<button type="button" class="registration" onclick="formtest();">회원가입</button>
 		</div>
 	</form>
+	<%@ include file="qwe.jsp"%>
 </body>
 </html>
