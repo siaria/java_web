@@ -1,16 +1,19 @@
 @charset "UTF-8";
 
-
 body {
 	margin: 0;
 	min-width: 992px;
-	font-family: "Segoe UI,Noto Sans,sans-serif,Helvetica Neue,Noto Sans KR";
+	font-family: 'AppleSDGothicNeo', 'Noto Sans KR', sans-serif !important;;
 }
 
 .header {
 	padding-top: 40px;
 	padding-bottom: 20px;
 	margin-top: -20px;
+}
+
+.navbar {
+	display: block;
 }
 
 li {
@@ -22,8 +25,7 @@ li {
 a {
 	text-decoration: none;
 	color: black;
-	/* float: left; */
-	font-size: 16px;
+	font-size: 18px;
 }
 
 .dia {
@@ -32,6 +34,29 @@ a {
 	display: block;
 	position: relative;
 	margin-top: -10px;
+}
+
+#_event .ev::after {
+	position: absolute;
+	content: "";
+	display: block;
+	border-bottom: 3px solid #959595;
+	transition: width 500ms ease-out;
+	left: auto;
+	right: 0;
+	width: 0;
+	padding-bottom: 34px;
+}
+
+#_event .ev:hover::after {
+	padding-bottom: 34px;
+	width: 18%;
+	left: 0;
+	right: auto;
+}
+
+#_event li .tab {
+	color: #000;
 }
 
 .mainlogo {
@@ -44,30 +69,33 @@ p {
 	margin-left: 30px;
 }
 
-
 .tab {
 	position: relative;
 	color: #222;
 	cursor: pointer;
-	border-bottom: 2px solid #222;
+	font-size: 18px
 }
 
-.nav_main {
-	font-weight: 700;
+.nav_home {
+	font-weight: 800;
+	font-size: 18px;
+}
+
+.nav_menu {
+	font-size: 18px;
 }
 
 .logo {
-	
 	padding-left: 37%;
 	padding-right: 30%;
 	display: block;
 }
-@media screen and (max-width: 1650px){
-	
-.logo{display:none;}
 
+@media screen and (max-width: 1650px) {
+	.logo {
+		display: none;
+	}
 }
-
-
-
-</style>
+</
+style
+>

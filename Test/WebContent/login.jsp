@@ -43,7 +43,7 @@ font-size: 13px;
 
 button[type=button], button[type=submit] {
 
-    background-color: #ebebeb;
+    background-color: #222 ;
     color: #fff;
     cursor: default;
 	padding: 10px;

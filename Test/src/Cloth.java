@@ -1,6 +1,5 @@
 
-
-public abstract class Cloth {    //�Ƿ� Ŭ����
+public abstract class Cloth {    //의류 클래스
 	String pname;
 	int price;
 	
@@ -13,8 +12,8 @@ public abstract class Cloth {    //�Ƿ� Ŭ����
 	}
 	
 	public void printCloth() {
-		System.out.print("��ǰ��: "+pname+" ");
-		System.out.print("����: "+price+" ");
+		System.out.print("상품명: "+pname+" ");
+		System.out.print("가격: "+price+" ");
 		printExtra();
 		System.out.println(" ");
 	}

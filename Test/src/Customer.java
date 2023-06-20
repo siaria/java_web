@@ -1,5 +1,5 @@
 
-public class Customer { 	//�� Ŭ����
+public class Customer { 	//고객 클래스
 	String name;
 	String address;
 	String phone;
@@ -29,9 +29,9 @@ public class Customer { 	//�� Ŭ����
 		this.phone=phone;
 	}
 	public void printMember() {
-		System.out.print("ȸ����:"+name+" ");
-		System.out.print("�ּ�: "+address+" ");
-		System.out.print("�޴��� ��ȣ: "+phone+" ");
+		System.out.print("회원명:"+name+" ");
+		System.out.print("주소: "+address+" ");
+		System.out.print("휴대폰 번호: "+phone+" ");
 		System.out.println(" ");
 	}
 }

@@ -5,32 +5,8 @@
 <html>
 <head>
 <title>회원가입창</title>
+
 <style>
-form {
-	border: 2px solid #ddd;
-	padding: 20px;
-	width: 500px;
-	margin: 0 auto;
-	margin-top: 50px;
-}
-
-input[type=text], input[type=password] {
-	padding: 10px;
-	margin-bottom: 20px;
-	border: 1px solid #ddd;
-	width: 470px;
-	border-radius: 6px;
-}
-
-button {
-	background-color: #4CAF50;
-	color: white;
-	padding: 10px;
-	border: none;
-	width: 100%;
-	margin-bottom: 10px;
-}
-
 .membership {
 	display: block;
 	text-align: center;
@@ -61,17 +37,79 @@ select {
 	padding: 10px;
 	margin-bottom: 20px;
 	border: 1px solid #ddd;
-	width: 490px;
+width: 100%;
 	border-radius: 6px;
 }
-.form-group1 ,.form-group2{
+
+.form-group1, .form-group2 {
 	overflow: auto;
-    box-sizing: border-box;
-    max-height: 150px;
-    padding: 13px;
-    border-radius: 6px;
-    border: 1px solid #d6d6d6;
+	box-sizing: border-box;
+	max-height: 150px;
+	padding: 13px;
+	border-radius: 6px;
+	border: 1px solid #d6d6d6;
 }
+
+form {
+	padding: 20px;
+	width: 300px;
+	margin: 0 auto;
+	margin-top: 50px;
+}
+
+._inputbox {
+	position: relative;
+	padding: 10px 0 14px;
+}
+
+input {
+	padding: 0;
+	outline: 0;
+	border: 0;
+	resize: none;
+	border-radius: 0;
+	-webkit-appearance: none;
+	background-color: transparent
+}
+
+input[type=text], input[type=password] {
+	padding: 8px 0;
+	width: 100%;
+	font-size: 15px;
+	letter-spacing: -.15px;
+	line-height: 22px;
+	border-bottom: 1px solid #ebebeb;
+}
+
+label {
+	font-size: 13px;
+	letter-spacing: -.07px;
+	line-height: 18px;
+}
+
+button[type=submit] {
+	background-color: #222;
+	color: #fff;
+	cursor: default;
+	padding: 10px;
+	border: none;
+	width: 100%;
+	font-size: 16px;
+	letter-spacing: -.16px;
+	font-weight: 700;
+	height: 52px;
+	border-radius: 12px;
+}
+
+.bt {
+	margin-top: 40px;
+}
+
+.login {
+	margin-bottom: 4px;
+}
+</style>
+
 </style>
 
 <script>
